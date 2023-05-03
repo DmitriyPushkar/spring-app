@@ -3,6 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="gameBean"
-          class="ru.pushkar.springcourse.ArcadeGame">
+          class="ru.pushkar.springcourse.StrategyGame">
+    </bean>
+    <bean id="computer"
+          class="ru.pushkar.springcourse.Computer">
+        <constructor-arg ref="gameBean"/>
     </bean>
 </beans>
