@@ -10,6 +10,8 @@ public class TestSpring {
 
         Computer computer=context.getBean("computer", Computer.class);
         computer.playGame();
+        System.out.println(computer.getName());
+        System.out.println(computer.getPrice());
         context.close();
     }
 }
