@@ -5,11 +5,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <context:property-placeholder location="classpath:computer.properties"/>
     <bean id="gameBean"
-          class="ru.pushkar.springcourse.StrategyGame">
+          class="ru.pushkar.springcourse.StrategyGame"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getStrategyGame">
     </bean>
     <bean id="computer"
-          class="ru.pushkar.springcourse.Computer">
+          class="ru.pushkar.springcourse.Computer" scope="prototype">
         <property name="game" ref="gameBean"/>
+
         <property name="name" value="${computer.name}"/>
         <property name="price" value="${computer.price}"/>
     </bean>

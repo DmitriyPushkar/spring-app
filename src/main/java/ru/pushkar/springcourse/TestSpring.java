@@ -7,11 +7,9 @@ public class TestSpring {
         ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
 //        Game game = context.getBean("gameBean", Game.class);
 //        Computer computer=new Computer(game);
-
-        Computer computer=context.getBean("computer", Computer.class);
-        computer.playGame();
-        System.out.println(computer.getName());
-        System.out.println(computer.getPrice());
+        StrategyGame game=context.getBean("gameBean", StrategyGame.class);
+        System.out.println(        game.getPlay()
+);
         context.close();
     }
 }
