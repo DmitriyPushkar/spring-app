@@ -16,6 +16,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car " + id+ " " + computer.playGame();
+        return "Car " + id+ " " + computer.playGame(GameGenre.Arcade);
     }
 }

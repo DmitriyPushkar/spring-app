@@ -13,8 +13,11 @@ public class TestSpring {
 //        ectionGameComputer.playGame();
 //        Computer computer =context.getBean("computer",Computer.class);
 //        computer.playGame();
-        Car car=context.getBean("car", Car.class);
-        System.out.println(car);
+        Computer computer=context.getBean("computer", Computer.class);
+        System.out.println(computer.playGame(GameGenre.Arcade));
+        System.out.println(computer.playGame(GameGenre.Strategy));
+        System.out.println(computer.playGame(GameGenre.Ection));
+
         context.close();
     }
 }
