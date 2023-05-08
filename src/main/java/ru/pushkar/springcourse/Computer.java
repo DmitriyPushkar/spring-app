@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-@Component
 public class Computer {
     @Value("${computer.name}")
     private String name;
@@ -12,7 +11,10 @@ public class Computer {
     private int power;
 
  private Game game1;
- public Game game2;
+ private Game game2;
+ private Game game3;
+
+
 
     public String getName() {
         return name;
@@ -22,10 +24,11 @@ public class Computer {
         return power;
     }
 
-    @Autowired
-    public Computer(@Qualifier("ectionGame") Game game1, @Qualifier("strategyGame") Game game2) {
+    public Computer(@Qualifier("arcadeGame") Game game1, @Qualifier("ectionGame") Game game2, @Qualifier("strategyGame") Game game3) {
         this.game1 = game1;
         this.game2 = game2;
+        this.game3= game3;
+
     }
 
     public String playGame(){
